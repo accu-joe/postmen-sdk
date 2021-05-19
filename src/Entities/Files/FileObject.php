@@ -6,16 +6,15 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Abstract file object
+ * Abstract file object.
  *
- * @package Files\FileObject
  * @see https://docs.postmen.com/api.html#a-files-object
  */
 abstract class FileObject extends PostmenEntity
 {
     use JsonSchema;
 
-    /**@var string */
+    /** @var string */
     protected $file_type = 'pdf';
 
     /** @var string */
@@ -32,6 +31,7 @@ abstract class FileObject extends PostmenEntity
     public function setFileType(string $file_type): self
     {
         $this->file_type = $file_type;
+
         return $this;
     }
 
@@ -43,6 +43,7 @@ abstract class FileObject extends PostmenEntity
     public function setPaperSize(string $paper_size): self
     {
         $this->paper_size = $paper_size;
+
         return $this;
     }
 
@@ -54,6 +55,7 @@ abstract class FileObject extends PostmenEntity
     public function setUrl(string $url): self
     {
         $this->url = $url;
+
         return $this;
     }
 }

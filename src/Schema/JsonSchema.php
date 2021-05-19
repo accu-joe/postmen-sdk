@@ -13,7 +13,7 @@ trait JsonSchema
     public function jsonSerialize()
     {
         if (! defined('static::JSON_SCHEMA')) {
-            throw new PostmenException(static::class . ' must define a public JSON_SCHEMA.');
+            throw new PostmenException(static::class.' must define a public JSON_SCHEMA.');
         }
 
         try {
@@ -21,7 +21,7 @@ trait JsonSchema
 
             if (! $schema) {
                 $schema = Schema::import(static::JSON_SCHEMA, new Context(
-                    new RefProvider(__DIR__ . '/../../resources/schemas/com.postmen.api')
+                    new RefProvider(__DIR__.'/../../resources/schemas/com.postmen.api')
                 ));
             }
 

@@ -95,7 +95,7 @@ class CreateLabelTest extends TestCase
             );
 
         self::assertJsonStringEqualsJsonFile(
-            __DIR__ . '/../../resources/create-label-request.json',
+            __DIR__.'/../../resources/create-label-request.json',
             \GuzzleHttp\json_encode($labelRequest, JSON_PRETTY_PRINT)
         );
     }
@@ -103,7 +103,7 @@ class CreateLabelTest extends TestCase
     public function testResponseMapsALabel()
     {
         $json = \GuzzleHttp\json_decode(
-            \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
+            \file_get_contents(__DIR__.'/../../resources/create-label-response.json'),
             true
         );
 
@@ -127,7 +127,7 @@ class CreateLabelTest extends TestCase
     public function testLabelResponseValidatesJson()
     {
         $json = \GuzzleHttp\json_decode(
-            \file_get_contents(__DIR__ . '/../../resources/create-label-response.json'),
+            \file_get_contents(__DIR__.'/../../resources/create-label-response.json'),
             true
         );
 

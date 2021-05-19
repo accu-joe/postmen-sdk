@@ -2,11 +2,8 @@
 
 namespace Accu\Postmen\Entities\Customs;
 
-use Accu\Postmen\Schema\JsonSchema;
-
 /**
- * Automated Export System
- * @package Accu\Postmen\Entities\Customs
+ * Automated Export System.
  * @see https://docs.postmen.com/api.html#aes
  */
 final class AES extends CustomsType
@@ -24,9 +21,10 @@ final class AES extends CustomsType
         return $this->itn_number;
     }
 
-    public function setItnNumber(string $itn_number): AES
+    public function setItnNumber(string $itn_number): self
     {
         $this->itn_number = $itn_number;
+
         return $this;
     }
 }

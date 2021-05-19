@@ -10,7 +10,6 @@ use Psr\Http\Message\ResponseInterface;
 
 /**
  * Error handling for documented API responses.
- * @package Accu\Postmen\Middleware
  * @see https://docs.postmen.com/errors.html
  */
 class ErrorHandler

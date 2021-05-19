@@ -7,11 +7,10 @@ use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
 /**
- * Money
+ * Money.
  *
  * Money object specifying the item / product value
  *
- * @package Money
  * @see https://docs.postmen.com/api.html#money
  */
 final class Money extends PostmenEntity
@@ -31,13 +30,14 @@ final class Money extends PostmenEntity
         return $this->amount;
     }
 
-    public function setAmount(float $amount): Money
+    public function setAmount(float $amount): self
     {
         if ($amount < 0) {
             throw new InvalidArgumentException('Must specify a positive monetary value');
         }
 
         $this->amount = $amount;
+
         return $this;
     }
 
@@ -46,13 +46,14 @@ final class Money extends PostmenEntity
         return $this->currency;
     }
 
-    public function setCurrency(?string $currency): Money
+    public function setCurrency(?string $currency): self
     {
         $this->currency = $currency;
+
         return $this;
     }
 
-    public static function fromData(array $data): Money
+    public static function fromData(array $data): self
     {
         return (new self)
             ->setAmount($data['amount'] ?? null)

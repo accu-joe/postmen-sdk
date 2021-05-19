@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Weight
+ * Weight.
  *
  * weight object specifying the parcel physical properties
  *
- * @package Weight
  * @see https://docs.postmen.com/api.html#weight
  */
 final class Weight extends PostmenEntity
@@ -30,9 +29,10 @@ final class Weight extends PostmenEntity
         return $this->unit;
     }
 
-    public function setUnit(?string $unit): Weight
+    public function setUnit(?string $unit): self
     {
         $this->unit = $unit;
+
         return $this;
     }
 
@@ -41,13 +41,14 @@ final class Weight extends PostmenEntity
         return $this->value;
     }
 
-    public function setValue(float $value): Weight
+    public function setValue(float $value): self
     {
         $this->value = $value;
+
         return $this;
     }
 
-    public static function fromData(array $data): Weight
+    public static function fromData(array $data): self
     {
         return (new self)
             ->setValue($data['value'] ?? null)

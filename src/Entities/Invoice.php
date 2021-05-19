@@ -28,9 +28,10 @@ final class Invoice extends PostmenEntity
         return $this->date;
     }
 
-    public function setDate(string $date): Invoice
+    public function setDate(string $date): self
     {
         $this->date = $date;
+
         return $this;
     }
 
@@ -39,9 +40,10 @@ final class Invoice extends PostmenEntity
         return $this->number;
     }
 
-    public function setNumber(string $number): Invoice
+    public function setNumber(string $number): self
     {
         $this->number = $number;
+
         return $this;
     }
 
@@ -50,9 +52,10 @@ final class Invoice extends PostmenEntity
         return $this->type;
     }
 
-    public function setType(string $type): Invoice
+    public function setType(string $type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -61,9 +64,10 @@ final class Invoice extends PostmenEntity
         return $this->number_of_copies;
     }
 
-    public function setNumberOfCopies(int $number_of_copies): Invoice
+    public function setNumberOfCopies(int $number_of_copies): self
     {
         $this->number_of_copies = $number_of_copies;
+
         return $this;
     }
 }

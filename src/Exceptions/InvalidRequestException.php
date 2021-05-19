@@ -50,7 +50,7 @@ class InvalidRequestException extends PostmenException
             return;
         }
 
-        throw new InvalidRequestException(
+        throw new self(
             $json->meta->message ?? "Encountered error code: {$json->meta->code}.",
             $request,
             $response,

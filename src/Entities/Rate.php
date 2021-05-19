@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Rate
+ * Rate.
  *
  * Quotes for delivery services
  *
- * @package Rate
  * @see https://docs.postmen.com/api.html#rate-type
  */
 final class Rate extends PostmenEntity
@@ -60,9 +59,10 @@ final class Rate extends PostmenEntity
         return $this->charge_weight;
     }
 
-    public function setChargeWeight(?Weight $charge_weight): Rate
+    public function setChargeWeight(?Weight $charge_weight): self
     {
         $this->charge_weight = $charge_weight;
+
         return $this;
     }
 
@@ -71,9 +71,10 @@ final class Rate extends PostmenEntity
         return $this->total_charge;
     }
 
-    public function setTotalCharge(?Money $total_charge): Rate
+    public function setTotalCharge(?Money $total_charge): self
     {
         $this->total_charge = $total_charge;
+
         return $this;
     }
 
@@ -82,9 +83,10 @@ final class Rate extends PostmenEntity
         return $this->shipper_account;
     }
 
-    public function setSimpleShipperAccount(?SimpleShipperAccount $simple_shipper_account): Rate
+    public function setSimpleShipperAccount(?SimpleShipperAccount $simple_shipper_account): self
     {
         $this->shipper_account = $simple_shipper_account;
+
         return $this;
     }
 
@@ -93,9 +95,10 @@ final class Rate extends PostmenEntity
         return $this->service_type;
     }
 
-    public function setServiceType(?string $service_type): Rate
+    public function setServiceType(?string $service_type): self
     {
         $this->service_type = $service_type;
+
         return $this;
     }
 
@@ -104,9 +107,10 @@ final class Rate extends PostmenEntity
         return $this->service_name;
     }
 
-    public function setServiceName(?string $service_name): Rate
+    public function setServiceName(?string $service_name): self
     {
         $this->service_name = $service_name;
+
         return $this;
     }
 
@@ -115,9 +119,10 @@ final class Rate extends PostmenEntity
         return $this->pickup_deadline;
     }
 
-    public function setPickupDeadline(?string $pickup_deadline): Rate
+    public function setPickupDeadline(?string $pickup_deadline): self
     {
         $this->pickup_deadline = $pickup_deadline;
+
         return $this;
     }
 
@@ -126,9 +131,10 @@ final class Rate extends PostmenEntity
         return $this->booking_cut_off;
     }
 
-    public function setBookingCutOff(?string $booking_cut_off): Rate
+    public function setBookingCutOff(?string $booking_cut_off): self
     {
         $this->booking_cut_off = $booking_cut_off;
+
         return $this;
     }
 
@@ -137,9 +143,10 @@ final class Rate extends PostmenEntity
         return $this->delivery_date;
     }
 
-    public function setDeliveryDate(?string $delivery_date): Rate
+    public function setDeliveryDate(?string $delivery_date): self
     {
         $this->delivery_date = $delivery_date;
+
         return $this;
     }
 
@@ -148,9 +155,10 @@ final class Rate extends PostmenEntity
         return $this->transit_time;
     }
 
-    public function setTransitTime(?int $transit_time): Rate
+    public function setTransitTime(?int $transit_time): self
     {
         $this->transit_time = $transit_time;
+
         return $this;
     }
 
@@ -162,9 +170,10 @@ final class Rate extends PostmenEntity
         return $this->detailed_charges;
     }
 
-    public function addDetailedCharge(?DetailedCharge $detailed_charge): Rate
+    public function addDetailedCharge(?DetailedCharge $detailed_charge): self
     {
         $this->detailed_charges[] = $detailed_charge;
+
         return $this;
     }
 
@@ -173,9 +182,10 @@ final class Rate extends PostmenEntity
         return $this->error_message;
     }
 
-    public function setErrorMessage(?string $error_message): Rate
+    public function setErrorMessage(?string $error_message): self
     {
         $this->error_message = $error_message;
+
         return $this;
     }
 
@@ -184,13 +194,14 @@ final class Rate extends PostmenEntity
         return $this->info_message;
     }
 
-    public function setInfoMessage(?string $info_message): Rate
+    public function setInfoMessage(?string $info_message): self
     {
         $this->info_message = $info_message;
+
         return $this;
     }
 
-    public static function fromData(array $data): Rate
+    public static function fromData(array $data): self
     {
         $entity = (new self)
             ->setSimpleShipperAccount(SimpleShipperAccount::fromData($data['shipper_account'] ?? []))

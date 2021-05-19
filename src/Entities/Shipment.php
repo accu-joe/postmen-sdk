@@ -6,7 +6,6 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * @package Shipment
  * @see https://docs.postmen.com/api.html#shipment
  */
 final class Shipment extends PostmenEntity
@@ -38,9 +37,10 @@ final class Shipment extends PostmenEntity
         return $this->parcels;
     }
 
-    public function addParcel(Parcel $parcel): Shipment
+    public function addParcel(Parcel $parcel): self
     {
         $this->parcels[] = $parcel;
+
         return $this;
     }
 
@@ -49,9 +49,10 @@ final class Shipment extends PostmenEntity
         return $this->ship_from;
     }
 
-    public function setShipFrom(Address $ship_from): Shipment
+    public function setShipFrom(Address $ship_from): self
     {
         $this->ship_from = $ship_from;
+
         return $this;
     }
 
@@ -60,9 +61,10 @@ final class Shipment extends PostmenEntity
         return $this->ship_to;
     }
 
-    public function setShipTo(Address $ship_to): Shipment
+    public function setShipTo(Address $ship_to): self
     {
         $this->ship_to = $ship_to;
+
         return $this;
     }
 
@@ -71,9 +73,10 @@ final class Shipment extends PostmenEntity
         return $this->return_to;
     }
 
-    public function setReturnTo(Address $return_to): Shipment
+    public function setReturnTo(Address $return_to): self
     {
         $this->return_to = $return_to;
+
         return $this;
     }
 
@@ -82,9 +85,10 @@ final class Shipment extends PostmenEntity
         return $this->delivery_instructions;
     }
 
-    public function setDeliveryInstructions(string $delivery_instructions): Shipment
+    public function setDeliveryInstructions(string $delivery_instructions): self
     {
         $this->delivery_instructions = $delivery_instructions ?: null;
+
         return $this;
     }
 }

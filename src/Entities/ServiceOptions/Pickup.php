@@ -20,9 +20,10 @@ final class Pickup extends ServiceOption
         return $this->start_time;
     }
 
-    public function setStartTime(string $startTime): Pickup
+    public function setStartTime(string $startTime): self
     {
         $this->start_time = $startTime;
+
         return $this;
     }
 
@@ -31,9 +32,10 @@ final class Pickup extends ServiceOption
         return $this->end_time;
     }
 
-    public function setEndTime(string $endTime): Pickup
+    public function setEndTime(string $endTime): self
     {
         $this->end_time = $endTime;
+
         return $this;
     }
 }

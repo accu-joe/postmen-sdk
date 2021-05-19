@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * DetailedCharge
+ * DetailedCharge.
  *
  * A Charge as a part of breakdown of rate price
  *
- * @package DetailedCharge
  * @see https://docs.postmen.com/api.html#detailed-charges
  */
 final class DetailedCharge extends PostmenEntity
@@ -30,9 +29,10 @@ final class DetailedCharge extends PostmenEntity
         return $this->charge;
     }
 
-    public function setCharge(?Money $charge): DetailedCharge
+    public function setCharge(?Money $charge): self
     {
         $this->charge = $charge;
+
         return $this;
     }
 
@@ -41,13 +41,14 @@ final class DetailedCharge extends PostmenEntity
         return $this->type;
     }
 
-    public function setType(?string $type): DetailedCharge
+    public function setType(?string $type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
-    public static function fromData(array $data): DetailedCharge
+    public static function fromData(array $data): self
     {
         return (new self)
             ->setCharge(Money::fromData($data['charge'] ?? []))

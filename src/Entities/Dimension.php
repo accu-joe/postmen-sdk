@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Dimension
+ * Dimension.
  *
  * dimensions object specifying the parcel physical properties
  *
- * @package Dimension
  * @see https://docs.postmen.com/api.html#dimension
  */
 final class Dimension extends PostmenEntity
@@ -51,27 +50,31 @@ final class Dimension extends PostmenEntity
         return $this->unit;
     }
 
-    public function setWidth(float $width): Dimension
+    public function setWidth(float $width): self
     {
         $this->width = $width;
+
         return $this;
     }
 
-    public function setHeight(float $height): Dimension
+    public function setHeight(float $height): self
     {
         $this->height = $height;
+
         return $this;
     }
 
-    public function setDepth(float $depth): Dimension
+    public function setDepth(float $depth): self
     {
         $this->depth = $depth;
+
         return $this;
     }
 
-    public function setUnit(string $unit): Dimension
+    public function setUnit(string $unit): self
     {
         $this->unit = $unit;
+
         return $this;
     }
 }

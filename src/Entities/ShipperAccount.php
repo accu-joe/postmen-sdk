@@ -2,16 +2,13 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\PostmenEntity;
 use Accu\Postmen\Schema\JsonSchema;
+use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * ShipperAccount
+ * ShipperAccount.
  *
  * Shipper details returned with rates
- *
- * @package ShipperAccount
- * https://docs.postmen.com/api.html#a-shipper_account-object
  */
 final class ShipperAccount extends PostmenEntity
 {
@@ -51,9 +48,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->id;
     }
 
-    public function setId(?string $id): ShipperAccount
+    public function setId(?string $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -62,9 +60,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->address;
     }
 
-    public function setAddress(?Address $address): ShipperAccount
+    public function setAddress(?Address $address): self
     {
         $this->address = $address;
+
         return $this;
     }
 
@@ -73,9 +72,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->slug;
     }
 
-    public function setSlug(?string $slug): ShipperAccount
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
         return $this;
     }
 
@@ -84,9 +84,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->status;
     }
 
-    public function setStatus(?string $status): ShipperAccount
+    public function setStatus(?string $status): self
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -95,9 +96,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->description;
     }
 
-    public function setDescription(?string $description): ShipperAccount
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -106,9 +108,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->type;
     }
 
-    public function setType(?string $type): ShipperAccount
+    public function setType(?string $type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -117,9 +120,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->timezone;
     }
 
-    public function setTimezone(?string $timezone): ShipperAccount
+    public function setTimezone(?string $timezone): self
     {
         $this->timezone = $timezone;
+
         return $this;
     }
 
@@ -128,9 +132,10 @@ final class ShipperAccount extends PostmenEntity
         return $this->created_at;
     }
 
-    public function setCreatedAt(?string $created_at): ShipperAccount
+    public function setCreatedAt(?string $created_at): self
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -139,13 +144,14 @@ final class ShipperAccount extends PostmenEntity
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(?string $updated_at): ShipperAccount
+    public function setUpdatedAt(?string $updated_at): self
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
-    public static function fromData(array $data): ShipperAccount
+    public static function fromData(array $data): self
     {
         return (new self)
             ->setId($data['id'] ?? null)

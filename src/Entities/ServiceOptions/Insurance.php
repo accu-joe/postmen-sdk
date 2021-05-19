@@ -19,9 +19,10 @@ final class Insurance extends ServiceOption
         return $this->insured_value;
     }
 
-    public function setInsuredValue(Money $insuredValue): Insurance
+    public function setInsuredValue(Money $insuredValue): self
     {
         $this->insured_value = $insuredValue;
+
         return $this;
     }
 }
