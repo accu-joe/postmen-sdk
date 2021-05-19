@@ -55,7 +55,7 @@ final class Label extends PostmenEntity
         return $this->id;
     }
 
-    public function setId(string $id): Label
+    public function setId(?string $id): Label
     {
         $this->id = $id;
         return $this;
@@ -66,7 +66,7 @@ final class Label extends PostmenEntity
         return $this->status;
     }
 
-    public function setStatus(string $status): Label
+    public function setStatus(?string $status): Label
     {
         $this->status = $status;
         return $this;
@@ -77,7 +77,7 @@ final class Label extends PostmenEntity
         return $this->ship_date;
     }
 
-    public function setShipDate(string $ship_date): Label
+    public function setShipDate(?string $ship_date): Label
     {
         $this->ship_date = $ship_date;
         return $this;
@@ -91,7 +91,7 @@ final class Label extends PostmenEntity
         return $this->tracking_numbers;
     }
 
-    public function setTrackingNumbers(array $tracking_numbers): Label
+    public function setTrackingNumbers(?array $tracking_numbers): Label
     {
         $this->tracking_numbers = $tracking_numbers;
         return $this;
@@ -124,7 +124,7 @@ final class Label extends PostmenEntity
         return $this->created_at;
     }
 
-    public function setCreatedAt(string $created_at): Label
+    public function setCreatedAt(?string $created_at): Label
     {
         $this->created_at = $created_at;
         return $this;
@@ -135,7 +135,7 @@ final class Label extends PostmenEntity
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(string $updated_at): Label
+    public function setUpdatedAt(?string $updated_at): Label
     {
         $this->updated_at = $updated_at;
         return $this;
@@ -171,7 +171,7 @@ final class Label extends PostmenEntity
         return $this->service_type;
     }
 
-    public function setServiceType(string $service_type): Label
+    public function setServiceType(?string $service_type): Label
     {
         $this->service_type = $service_type;
         return $this;
