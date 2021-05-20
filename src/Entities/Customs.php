@@ -59,7 +59,7 @@ final class Customs extends PostmenEntity
         return $this;
     }
 
-    public function getEei(): string
+    public function getEei(): ?CustomsType
     {
         return $this->eei;
     }
