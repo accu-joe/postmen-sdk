@@ -3,6 +3,7 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Schema\JsonSchema;
+use Accu\Postmen\Utility\DataMapper;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -230,20 +231,21 @@ final class Address extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return (new self)
-            ->setCountry($data['country'] ?? null)
-            ->setContactName($data['contact_name'] ?? null)
-            ->setPhone($data['phone'] ?? null)
-            ->setFax($data['fax'] ?? null)
-            ->setEmail($data['email'] ?? null)
-            ->setCompanyName($data['company_name'] ?? null)
-            ->setStreet1($data['street1'] ?? null)
-            ->setStreet2($data['street2'] ?? null)
-            ->setStreet3($data['street3'] ?? null)
-            ->setCity($data['city'] ?? null)
-            ->setState($data['state'] ?? null)
-            ->setPostalCode($data['postal_code'] ?? null)
-            ->setType($data['type'] ?? null)
-            ->setTaxId($data['tax_id'] ?? null);
+        return DataMapper::hydrateEntityFromMap(new self, [
+            'country' => 'setCountry',
+            'contact_name' => 'setContactName',
+            'phone' => 'setPhone',
+            'fax' => 'setFax',
+            'email' => 'setEmail',
+            'company_name' => 'setCompanyName',
+            'street1' => 'setStreet1',
+            'street2' => 'setStreet2',
+            'street3' => 'setStreet3',
+            'city' => 'setCity',
+            'state' => 'setState',
+            'postal_code' => 'setPostalCode',
+            'type' => 'setType',
+            'tax_id' => 'setTaxId',
+        ], $data);
     }
 }
