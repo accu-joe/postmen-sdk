@@ -6,9 +6,8 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Label
+ * Label.
  *
- * @package Label
  * @see https://docs.postmen.com/api.html#a-label-object
  */
 final class Label extends PostmenEntity
@@ -17,7 +16,7 @@ final class Label extends PostmenEntity
 
     public const JSON_SCHEMA = '/label#/links/0/targetSchema';
 
-    /**@var string Unique label identifier */
+    /** @var string Unique label identifier */
     private $id;
 
     /** @var string */
@@ -55,9 +54,10 @@ final class Label extends PostmenEntity
         return $this->id;
     }
 
-    public function setId(string $id): Label
+    public function setId(string $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -66,9 +66,10 @@ final class Label extends PostmenEntity
         return $this->status;
     }
 
-    public function setStatus(string $status): Label
+    public function setStatus(string $status): self
     {
         $this->status = $status;
+
         return $this;
     }
 
@@ -77,9 +78,10 @@ final class Label extends PostmenEntity
         return $this->ship_date;
     }
 
-    public function setShipDate(string $ship_date): Label
+    public function setShipDate(string $ship_date): self
     {
         $this->ship_date = $ship_date;
+
         return $this;
     }
 
@@ -91,9 +93,10 @@ final class Label extends PostmenEntity
         return $this->tracking_numbers;
     }
 
-    public function setTrackingNumbers(array $tracking_numbers): Label
+    public function setTrackingNumbers(array $tracking_numbers): self
     {
         $this->tracking_numbers = $tracking_numbers;
+
         return $this;
     }
 
@@ -102,9 +105,10 @@ final class Label extends PostmenEntity
         return $this->files;
     }
 
-    public function setFiles(Files $files): Label
+    public function setFiles(Files $files): self
     {
         $this->files = $files;
+
         return $this;
     }
 
@@ -113,9 +117,10 @@ final class Label extends PostmenEntity
         return $this->rate;
     }
 
-    public function setRate(Rate $rate): Label
+    public function setRate(Rate $rate): self
     {
         $this->rate = $rate;
+
         return $this;
     }
 
@@ -124,9 +129,10 @@ final class Label extends PostmenEntity
         return $this->created_at;
     }
 
-    public function setCreatedAt(string $created_at): Label
+    public function setCreatedAt(string $created_at): self
     {
         $this->created_at = $created_at;
+
         return $this;
     }
 
@@ -135,9 +141,10 @@ final class Label extends PostmenEntity
         return $this->updated_at;
     }
 
-    public function setUpdatedAt(string $updated_at): Label
+    public function setUpdatedAt(string $updated_at): self
     {
         $this->updated_at = $updated_at;
+
         return $this;
     }
 
@@ -149,9 +156,10 @@ final class Label extends PostmenEntity
         return $this->references;
     }
 
-    public function addReference(string $reference): Label
+    public function addReference(string $reference): self
     {
         $this->references[] = $reference;
+
         return $this;
     }
 
@@ -160,9 +168,10 @@ final class Label extends PostmenEntity
         return $this->shipper_account;
     }
 
-    public function setShipperAccount(ShipperAccount $shipper_account): Label
+    public function setShipperAccount(ShipperAccount $shipper_account): self
     {
         $this->shipper_account = $shipper_account;
+
         return $this;
     }
 
@@ -171,9 +180,10 @@ final class Label extends PostmenEntity
         return $this->service_type;
     }
 
-    public function setServiceType(string $service_type): Label
+    public function setServiceType(string $service_type): self
     {
         $this->service_type = $service_type;
+
         return $this;
     }
 

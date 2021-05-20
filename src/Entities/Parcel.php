@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Parcel
+ * Parcel.
  *
  * a box or envelope representing a parcel to be delivered
  *
- * @package Parcel
  * @see https://docs.postmen.com/api.html#parcel
  */
 final class Parcel extends PostmenEntity
@@ -39,9 +38,10 @@ final class Parcel extends PostmenEntity
         return $this->box_type;
     }
 
-    public function setBoxType(string $box_type): Parcel
+    public function setBoxType(string $box_type): self
     {
         $this->box_type = $box_type;
+
         return $this;
     }
 
@@ -68,27 +68,31 @@ final class Parcel extends PostmenEntity
         return $this->weight;
     }
 
-    public function setWeight(Weight $weight): Parcel
+    public function setWeight(Weight $weight): self
     {
         $this->weight = $weight;
+
         return $this;
     }
 
-    public function setDimension(Dimension $dimension): Parcel
+    public function setDimension(Dimension $dimension): self
     {
         $this->dimension = $dimension;
+
         return $this;
     }
 
-    public function setDescription(string $description): Parcel
+    public function setDescription(string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
-    public function addItem(Item $item): Parcel
+    public function addItem(Item $item): self
     {
         $this->items[] = $item;
+
         return $this;
     }
 }

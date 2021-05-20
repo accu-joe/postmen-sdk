@@ -33,9 +33,10 @@ class ListAll extends Request
         return \GuzzleHttp\Psr7\Uri::withQueryValues(parent::getUri(), ['slug' => $this->slug]);
     }
 
-    public function setSlug(?string $slug): ListAll
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
         return $this;
     }
 

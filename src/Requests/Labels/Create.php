@@ -10,12 +10,11 @@ use Accu\Postmen\Entities\ServiceOptions\ServiceOption;
 use Accu\Postmen\Entities\Shipment;
 use Accu\Postmen\Entities\ShipperAccount;
 use Accu\Postmen\Requests\Request;
-use Accu\Postmen\Utility\PostmenEntity;
 use Accu\Postmen\Schema\JsonSchema;
+use Accu\Postmen\Utility\PostmenEntity;
 
 /**
  * Builds a Label\Create request.
- * @package Accu\Postmen\Requests\Labels
  * @link https://docs.postmen.com/api.html#labels-create-a-label
  */
 class Create extends Request
@@ -74,9 +73,10 @@ class Create extends Request
         return $this->shipper_account;
     }
 
-    public function setShipperAccount(ShipperAccount $shipper_account): Create
+    public function setShipperAccount(ShipperAccount $shipper_account): self
     {
         $this->shipper_account = $shipper_account;
+
         return $this;
     }
 
@@ -85,9 +85,10 @@ class Create extends Request
         return $this->shipment;
     }
 
-    public function setShipment(Shipment $shipment): Create
+    public function setShipment(Shipment $shipment): self
     {
         $this->shipment = $shipment;
+
         return $this;
     }
 
@@ -96,9 +97,10 @@ class Create extends Request
         return $this->return_shipment;
     }
 
-    public function setReturnShipment(bool $return_shipment): Create
+    public function setReturnShipment(bool $return_shipment): self
     {
         $this->return_shipment = $return_shipment;
+
         return $this;
     }
 
@@ -107,9 +109,10 @@ class Create extends Request
         return $this->is_document;
     }
 
-    public function setIsDocument(bool $is_document): Create
+    public function setIsDocument(bool $is_document): self
     {
         $this->is_document = $is_document;
+
         return $this;
     }
 
@@ -118,9 +121,10 @@ class Create extends Request
         return $this->billing;
     }
 
-    public function setBilling(Billing $billing): Create
+    public function setBilling(Billing $billing): self
     {
         $this->billing = $billing;
+
         return $this;
     }
 
@@ -129,9 +133,10 @@ class Create extends Request
         return $this->service_type;
     }
 
-    public function setServiceType(string $service_type): Create
+    public function setServiceType(string $service_type): self
     {
         $this->service_type = $service_type;
+
         return $this;
     }
 
@@ -140,9 +145,10 @@ class Create extends Request
         return $this->paper_size;
     }
 
-    public function setPaperSize(string $paper_size): Create
+    public function setPaperSize(string $paper_size): self
     {
         $this->paper_size = $paper_size;
+
         return $this;
     }
 
@@ -151,9 +157,10 @@ class Create extends Request
         return $this->order_number;
     }
 
-    public function setOrderNumber(string $order_number): Create
+    public function setOrderNumber(string $order_number): self
     {
         $this->order_number = $order_number;
+
         return $this;
     }
 
@@ -165,7 +172,7 @@ class Create extends Request
         return $this->references;
     }
 
-    public function addReference(?string $reference): Create
+    public function addReference(?string $reference): self
     {
         if ($reference) {
             $this->references[] = $reference;
@@ -179,9 +186,10 @@ class Create extends Request
         return $this->customs;
     }
 
-    public function setCustoms(Customs $customs): Create
+    public function setCustoms(Customs $customs): self
     {
         $this->customs = $customs;
+
         return $this;
     }
 
@@ -190,9 +198,10 @@ class Create extends Request
         return $this->invoice;
     }
 
-    public function setInvoice(Invoice $invoice): Create
+    public function setInvoice(Invoice $invoice): self
     {
         $this->invoice = $invoice;
+
         return $this;
     }
 
@@ -201,15 +210,17 @@ class Create extends Request
         return $this->ship_date;
     }
 
-    public function setShipDate(string $ship_date): Create
+    public function setShipDate(string $ship_date): self
     {
         $this->ship_date = $ship_date;
+
         return $this;
     }
 
-    public function addServiceOption(ServiceOption $serviceOption): Create
+    public function addServiceOption(ServiceOption $serviceOption): self
     {
         $this->service_options[] = $serviceOption;
+
         return $this;
     }
 

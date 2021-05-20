@@ -17,9 +17,10 @@ final class HoldForPickup extends ServiceOption
         return $this->enabled;
     }
 
-    public function setEnabled(bool $enabled): HoldForPickup
+    public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
+
         return $this;
     }
 }

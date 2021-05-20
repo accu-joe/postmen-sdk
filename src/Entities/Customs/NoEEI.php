@@ -3,8 +3,7 @@
 namespace Accu\Postmen\Entities\Customs;
 
 /**
- * NoEEI - Electronic Export Information
- * @package Accu\Postmen\Entities\Customs
+ * NoEEI - Electronic Export Information.
  * @see https://docs.postmen.com/api.html#no_eei
  */
 final class NoEEI extends CustomsType
@@ -22,9 +21,10 @@ final class NoEEI extends CustomsType
         return $this->ftr_exemption;
     }
 
-    public function setFtrExemption(string $ftr_exemption): NoEEI
+    public function setFtrExemption(string $ftr_exemption): self
     {
         $this->ftr_exemption = $ftr_exemption;
+
         return $this;
     }
 }

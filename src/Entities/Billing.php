@@ -2,8 +2,8 @@
 
 namespace Accu\Postmen\Entities;
 
-use Accu\Postmen\Utility\PostmenEntity;
 use Accu\Postmen\Schema\JsonSchema;
+use Accu\Postmen\Utility\PostmenEntity;
 
 /**
  * @see https://docs.postmen.com/api.html#billing
@@ -22,9 +22,10 @@ final class Billing extends PostmenEntity
         return $this->paid_by;
     }
 
-    public function setPaidBy(string $paid_by): Billing
+    public function setPaidBy(string $paid_by): self
     {
         $this->paid_by = $paid_by;
+
         return $this;
     }
 }

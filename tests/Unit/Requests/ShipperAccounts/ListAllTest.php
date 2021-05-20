@@ -21,7 +21,7 @@ class ListAllTest extends TestCase
     public function can_retrieve_all_shipper_accounts()
     {
         $schema = json_decode(
-            file_get_contents(__DIR__ . '/../../../../resources/schemas/com.postmen.api/shipper_account.json'),
+            file_get_contents(__DIR__.'/../../../../resources/schemas/com.postmen.api/shipper_account.json'),
             true
         );
 

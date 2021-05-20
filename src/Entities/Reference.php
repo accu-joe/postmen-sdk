@@ -7,7 +7,7 @@ use Accu\Postmen\Utility\PostmenEntity;
 use InvalidArgumentException;
 
 /**
- * Reference to another object
+ * Reference to another object.
  *
  * @see https://docs.postmen.com/api.html#reference
  */
@@ -25,13 +25,14 @@ final class Reference extends PostmenEntity
         return $this->entity;
     }
 
-    public function setEntity($entity): Reference
+    public function setEntity($entity): self
     {
         if (! method_exists($entity, 'getId')) {
             throw new InvalidArgumentException('Expected an object with a getId() method.');
         }
 
         $this->entity = $entity;
+
         return $this;
     }
 
@@ -50,7 +51,7 @@ final class Reference extends PostmenEntity
     public static function mapCollection(array $collection)
     {
         return array_map(static function ($item) {
-            return Reference::fromEntity($item);
+            return self::fromEntity($item);
         }, $collection);
     }
 }

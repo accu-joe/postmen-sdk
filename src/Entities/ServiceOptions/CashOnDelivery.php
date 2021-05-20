@@ -19,9 +19,10 @@ final class CashOnDelivery extends ServiceOption
         return $this->cod_value;
     }
 
-    public function setCashOnDeliveryValue(Money $cashOnDelivery): CashOnDelivery
+    public function setCashOnDeliveryValue(Money $cashOnDelivery): self
     {
         $this->cod_value = $cashOnDelivery;
+
         return $this;
     }
 }

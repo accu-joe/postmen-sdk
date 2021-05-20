@@ -49,9 +49,10 @@ class Configuration
         return $this->handlerStack;
     }
 
-    public function setHandlerStack(HandlerStack $handlerStack = null): Configuration
+    public function setHandlerStack(HandlerStack $handlerStack = null): self
     {
         $this->handlerStack = $handlerStack;
+
         return $this;
     }
 
@@ -60,9 +61,10 @@ class Configuration
         return $this->maxRetries;
     }
 
-    public function setMaxRetries(int $maxRetries): Configuration
+    public function setMaxRetries(int $maxRetries): self
     {
         $this->maxRetries = $maxRetries;
+
         return $this;
     }
 
@@ -71,9 +73,10 @@ class Configuration
         return $this->delayCalculator;
     }
 
-    public function setDelayCalculator(?callable $delayCalculator): Configuration
+    public function setDelayCalculator(?callable $delayCalculator): self
     {
         $this->delayCalculator = $delayCalculator;
+
         return $this;
     }
 }

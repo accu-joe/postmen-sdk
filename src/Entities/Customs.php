@@ -40,9 +40,10 @@ final class Customs extends PostmenEntity
         return $this->purpose;
     }
 
-    public function setPurpose(string $purpose): Customs
+    public function setPurpose(string $purpose): self
     {
         $this->purpose = $purpose;
+
         return $this;
     }
 
@@ -51,9 +52,10 @@ final class Customs extends PostmenEntity
         return $this->terms_of_trade;
     }
 
-    public function setTermsOfTrade(string $terms_of_trade): Customs
+    public function setTermsOfTrade(string $terms_of_trade): self
     {
         $this->terms_of_trade = $terms_of_trade;
+
         return $this;
     }
 
@@ -62,9 +64,10 @@ final class Customs extends PostmenEntity
         return $this->eei;
     }
 
-    public function setEei(CustomsType $customsType): Customs
+    public function setEei(CustomsType $customsType): self
     {
         $this->eei = $customsType;
+
         return $this;
     }
 
@@ -73,9 +76,10 @@ final class Customs extends PostmenEntity
         return $this->billing;
     }
 
-    public function setBilling(Billing $billing): Customs
+    public function setBilling(Billing $billing): self
     {
         $this->billing = $billing;
+
         return $this;
     }
 
@@ -84,9 +88,10 @@ final class Customs extends PostmenEntity
         return $this->importer_address;
     }
 
-    public function setImporterAddress(Address $importer_address): Customs
+    public function setImporterAddress(Address $importer_address): self
     {
         $this->importer_address = $importer_address;
+
         return $this;
     }
 
@@ -95,9 +100,10 @@ final class Customs extends PostmenEntity
         return $this->passport;
     }
 
-    public function setPassport(Passport $passport): Customs
+    public function setPassport(Passport $passport): self
     {
         $this->passport = $passport;
+
         return $this;
     }
 }

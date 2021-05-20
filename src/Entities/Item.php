@@ -6,11 +6,10 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * Item
+ * Item.
  *
  * Item object describes products within parcel
  *
- * @package Item
  * @see https://docs.postmen.com/api.html#item
  */
 final class Item extends PostmenEntity
@@ -48,9 +47,10 @@ final class Item extends PostmenEntity
         return $this->description;
     }
 
-    public function setDescription(string $description): Item
+    public function setDescription(string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
@@ -59,9 +59,10 @@ final class Item extends PostmenEntity
         return $this->quantity;
     }
 
-    public function setQuantity(int $quantity): Item
+    public function setQuantity(int $quantity): self
     {
         $this->quantity = $quantity;
+
         return $this;
     }
 
@@ -70,9 +71,10 @@ final class Item extends PostmenEntity
         return $this->price;
     }
 
-    public function setPrice(Money $price): Item
+    public function setPrice(Money $price): self
     {
         $this->price = $price;
+
         return $this;
     }
 
@@ -81,9 +83,10 @@ final class Item extends PostmenEntity
         return $this->weight;
     }
 
-    public function setWeight(Weight $weight): Item
+    public function setWeight(Weight $weight): self
     {
         $this->weight = $weight;
+
         return $this;
     }
 
@@ -92,9 +95,10 @@ final class Item extends PostmenEntity
         return $this->item_id;
     }
 
-    public function setItemId(string $item_id): Item
+    public function setItemId(string $item_id): self
     {
         $this->item_id = $item_id;
+
         return $this;
     }
 
@@ -103,9 +107,10 @@ final class Item extends PostmenEntity
         return $this->origin_country;
     }
 
-    public function setOriginCountry(string $origin_country): Item
+    public function setOriginCountry(string $origin_country): self
     {
         $this->origin_country = $origin_country;
+
         return $this;
     }
 
@@ -114,9 +119,10 @@ final class Item extends PostmenEntity
         return $this->sku;
     }
 
-    public function setSku(string $sku): Item
+    public function setSku(string $sku): self
     {
         $this->sku = $sku;
+
         return $this;
     }
 
@@ -125,9 +131,10 @@ final class Item extends PostmenEntity
         return $this->hs_code;
     }
 
-    public function setHsCode(string $hs_code): Item
+    public function setHsCode(string $hs_code): self
     {
         $this->hs_code = $hs_code;
+
         return $this;
     }
 }

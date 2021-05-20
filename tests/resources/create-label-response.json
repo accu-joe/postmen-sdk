@@ -44,13 +44,9 @@
             "transit_time": null,
             "pickup_deadline": null
         },
-        "tracking_numbers": [
-            "1Z72373X6721548826"
-        ],
+        "tracking_numbers": ["1Z72373X6721548826"],
         "service_type": "ups_expedited",
-        "references": [
-            "Handle with care"
-        ],
+        "references": ["Handle with care"],
         "created_at": "2020-08-24T10:07:58+00:00",
         "shipper_account": {
             "id": "75400d65-1c64-4c57-8507-28332a1629ae",

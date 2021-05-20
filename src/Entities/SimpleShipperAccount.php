@@ -6,12 +6,9 @@ use Accu\Postmen\Schema\JsonSchema;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
- * SimpleShipperAccount
+ * SimpleShipperAccount.
  *
  * Shipper details returned with rates
- *
- * @package SimpleShipperAccount
- * https://docs.postmen.com/api.html#shipper-account-information
  */
 final class SimpleShipperAccount extends PostmenEntity
 {
@@ -28,14 +25,15 @@ final class SimpleShipperAccount extends PostmenEntity
     /** @var string Shipper account description */
     private $description;
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->id;
     }
 
-    public function setId(?string $id): SimpleShipperAccount
+    public function setId(?string $id): self
     {
         $this->id = $id;
+
         return $this;
     }
 
@@ -44,9 +42,10 @@ final class SimpleShipperAccount extends PostmenEntity
         return $this->slug;
     }
 
-    public function setSlug(?string $slug): SimpleShipperAccount
+    public function setSlug(?string $slug): self
     {
         $this->slug = $slug;
+
         return $this;
     }
 
@@ -55,13 +54,14 @@ final class SimpleShipperAccount extends PostmenEntity
         return $this->description;
     }
 
-    public function setDescription(?string $description): SimpleShipperAccount
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
 
-    public static function fromData(array $data): SimpleShipperAccount
+    public static function fromData(array $data): self
     {
         return (new self)
             ->setId($data['id'] ?? [])

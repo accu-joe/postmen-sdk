@@ -20,7 +20,7 @@ class Retrieve extends Request
     {
         parent::__construct(
             static::METHOD,
-            static::URI . '/' . $reference
+            static::URI.'/'.$reference
         );
     }
 

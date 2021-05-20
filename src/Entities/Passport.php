@@ -25,9 +25,10 @@ final class Passport extends PostmenEntity
         return $this->number;
     }
 
-    public function setNumber(string $number): Passport
+    public function setNumber(string $number): self
     {
         $this->number = $number;
+
         return $this;
     }
 
@@ -36,9 +37,10 @@ final class Passport extends PostmenEntity
         return $this->issue_date;
     }
 
-    public function setIssueDate(string $issue_date): Passport
+    public function setIssueDate(string $issue_date): self
     {
         $this->issue_date = $issue_date;
+
         return $this;
     }
 }

@@ -61,7 +61,7 @@ class ClientTest extends TestCase
                     'message' => 'Internal Error',
                     'details' => [],
                 ],
-            ]))
+            ])),
         ]));
 
         $this->expectException(InvalidRequestException::class);

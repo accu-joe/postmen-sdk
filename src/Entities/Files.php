@@ -34,9 +34,10 @@ final class Files extends PostmenEntity
         return $this->customs_declaration;
     }
 
-    public function setCustomsDeclaration(Files\CustomsDeclaration $customsDeclaration): Files
+    public function setCustomsDeclaration(Files\CustomsDeclaration $customsDeclaration): self
     {
         $this->customs_declaration = $customsDeclaration;
+
         return $this;
     }
 
@@ -45,9 +46,10 @@ final class Files extends PostmenEntity
         return $this->label;
     }
 
-    public function setLabel(Files\Label $label): Files
+    public function setLabel(Files\Label $label): self
     {
         $this->label = $label;
+
         return $this;
     }
 
@@ -56,9 +58,10 @@ final class Files extends PostmenEntity
         return $this->invoice;
     }
 
-    public function setInvoice(Files\Invoice $invoice): Files
+    public function setInvoice(Files\Invoice $invoice): self
     {
         $this->invoice = $invoice;
+
         return $this;
     }
 
@@ -67,9 +70,10 @@ final class Files extends PostmenEntity
         return $this->qr_code;
     }
 
-    public function setQRCode(Files\QRCode $qrCode): Files
+    public function setQRCode(Files\QRCode $qrCode): self
     {
         $this->qr_code = $qrCode;
+
         return $this;
     }
 

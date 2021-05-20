@@ -17,9 +17,10 @@ final class General extends ServiceOption
         return $this->type;
     }
 
-    public function setType(string $type): General
+    public function setType(string $type): self
     {
         $this->type = $type;
+
         return $this;
     }
 
@@ -28,9 +29,10 @@ final class General extends ServiceOption
         return $this->enabled;
     }
 
-    public function setEnabled(bool $enabled): General
+    public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
+
         return $this;
     }
 }

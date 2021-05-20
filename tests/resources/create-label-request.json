@@ -2,9 +2,7 @@
     "async": false,
     "is_document": false,
     "paper_size": "4x8",
-    "references": [
-        "referenceid"
-    ],
+    "references": ["referenceid"],
     "return_shipment": false,
     "service_type": "dhl_express_worldwide",
     "shipper_account": {
