@@ -3,7 +3,6 @@
 namespace Accu\Postmen\Entities;
 
 use Accu\Postmen\Schema\JsonSchema;
-use Accu\Postmen\Utility\DataMapper;
 use Accu\Postmen\Utility\PostmenEntity;
 
 /**
@@ -231,7 +230,7 @@ final class Address extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return DataMapper::hydrateEntityFromMap(new self, [
+        return self::hydrateFromMap(new self, [
             'country' => 'setCountry',
             'contact_name' => 'setContactName',
             'phone' => 'setPhone',

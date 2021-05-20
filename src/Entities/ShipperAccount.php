@@ -153,15 +153,18 @@ final class ShipperAccount extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return (new self)
-            ->setId($data['id'] ?? null)
-            ->setAddress(Address::fromData($data['address'] ?? []))
-            ->setSlug($data['slug'] ?? null)
-            ->setStatus($data['status'] ?? null)
-            ->setDescription($data['description'] ?? null)
-            ->setType($data['type'] ?? null)
-            ->setTimezone($data['timezone'] ?? null)
-            ->setCreatedAt($data['created_at'] ?? null)
-            ->setUpdatedAt($data['updated_at'] ?? null);
+        $data['address'] = Address::fromData($data['address'] ?? []);
+
+        return self::hydrateFromMap(new self, [
+            'id' => 'setId',
+            'address' => 'setAddress',
+            'slug' => 'setSlug',
+            'status' => 'setStatus',
+            'description' => 'setDescription',
+            'type' => 'setType',
+            'timezone' => 'setTimezone',
+            'created_at' => 'setCreatedAt',
+            'updated_at' => 'setUpdatedAt',
+        ], $data);
     }
 }

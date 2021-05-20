@@ -63,9 +63,10 @@ final class SimpleShipperAccount extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return (new self)
-            ->setId($data['id'] ?? [])
-            ->setSlug($data['slug'] ?? [])
-            ->setDescription($data['description'] ?? []);
+        return self::hydrateFromMap(new self, [
+            'id' => 'setId',
+            'slug' => 'setSlug',
+            'description' => 'setDescription',
+        ], $data);
     }
 }

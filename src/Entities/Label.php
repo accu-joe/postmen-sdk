@@ -187,22 +187,24 @@ final class Label extends PostmenEntity
         return $this;
     }
 
-    public static function fromData(array $data): PostmenEntity
+    public static function fromData(array $data): self
     {
-        return (new self())
-            ->setId($data['id'] ?? null)
-            ->setStatus($data['status'] ?? null)
-            ->setTrackingNumbers($data['tracking_numbers'] ?? null)
-            ->setFiles(Files::fromData($data['files'] ?? []))
-            ->setCreatedAt($data['created_at'] ?? null)
-            ->setUpdatedAt($data['updated_at'] ?? null)
-            ->setShipDate($data['ship_date'] ?? null)
-            ->setShipperAccount((new ShipperAccount())
-                ->setId($data['shipper_account']['id'] ?? null)
-                ->setSlug($data['shipper_account']['slug'] ?? null)
-                ->setDescription($data['shipper_account']['description'] ?? null)
-            )
-            ->setRate(Rate::fromData($data['rate'] ?? null))
-            ->setServiceType($data['service_type'] ?? null);
+        $label = (new self())
+            ->setShipperAccount(ShipperAccount::fromData($data['shipper_account'] ?? []))
+            ->setRate(Rate::fromData($data['rate'] ?? []));
+
+        if ($data['files']) {
+            $label->setFiles(Files::fromData($data['files']));
+        }
+
+        return self::hydrateFromMap($label, [
+            'id' => 'setId',
+            'status' => 'setStatus',
+            'tracking_numbers' => 'setTrackingNumbers',
+            'created_at' => 'setCreatedAt',
+            'updated_at' => 'setUpdatedAt',
+            'ship_date' => 'setShipDate',
+            'service_type' => 'setServiceType',
+        ], $data);
     }
 }

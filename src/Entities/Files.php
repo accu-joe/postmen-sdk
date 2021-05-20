@@ -77,11 +77,7 @@ final class Files extends PostmenEntity
         return $this;
     }
 
-    /**
-     * @param array $data
-     * @return PostmenEntity|Files
-     */
-    public static function fromData(array $data)
+    public static function fromData(array $data): self
     {
         $instance = new self();
 

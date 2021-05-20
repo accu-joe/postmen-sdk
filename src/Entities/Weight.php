@@ -50,8 +50,9 @@ final class Weight extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return (new self)
-            ->setValue($data['value'] ?? null)
-            ->setUnit($data['unit'] ?? null);
+        return self::hydrateFromMap(new self, [
+            'value' => 'setValue',
+            'unit' => 'setUnit',
+        ], $data);
     }
 }

@@ -203,29 +203,32 @@ final class Rate extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        $entity = (new self)
-            ->setSimpleShipperAccount(SimpleShipperAccount::fromData($data['shipper_account'] ?? []))
-            ->setServiceType($data['service_type'] ?? null)
-            ->setServiceName($data['service_name'] ?? null)
-            ->setPickupDeadline($data['pickup_deadline'] ?? null)
-            ->setBookingCutoff($data['booking_cut_off'] ?? null)
-            ->setDeliveryDate($data['delivery_date'] ?? null)
-            ->setTransitTime($data['transit_time'] ?? null)
-            ->setErrorMessage($data['error_message'] ?? null)
-            ->setInfoMessage($data['info_message'] ?? null);
+        $rate = (new self)
+            ->setSimpleShipperAccount(
+                SimpleShipperAccount::fromData($data['shipper_account'] ?? [])
+            );
 
         if ($data['charge_weight'] ?? false) {
-            $entity->setChargeWeight(Weight::fromData($data['charge_weight']));
+            $rate->setChargeWeight(Weight::fromData($data['charge_weight']));
         }
 
         if ($data['total_charge'] ?? false) {
-            $entity->setTotalCharge(Money::fromData($data['total_charge']));
+            $rate->setTotalCharge(Money::fromData($data['total_charge']));
         }
 
         foreach ($data['detailed_charges'] ?? [] as $detailed_charge) {
-            $entity->addDetailedCharge(DetailedCharge::fromData($detailed_charge));
+            $rate->addDetailedCharge(DetailedCharge::fromData($detailed_charge));
         }
 
-        return $entity;
+        return self::hydrateFromMap($rate, [
+            'service_type' => 'setServiceType',
+            'service_name' => 'setServiceName',
+            'pickup_deadline' => 'setPickupDeadline',
+            'booking_cut_off' => 'setBookingCutoff',
+            'delivery_date' => 'setDeliveryDate',
+            'transit_time' => 'setTransitTime',
+            'error_message' => 'setErrorMessage',
+            'info_message' => 'setInfoMessage',
+        ], $data);
     }
 }

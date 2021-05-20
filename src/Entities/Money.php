@@ -55,8 +55,9 @@ final class Money extends PostmenEntity
 
     public static function fromData(array $data): self
     {
-        return (new self)
-            ->setAmount($data['amount'] ?? null)
-            ->setCurrency($data['currency'] ?? null);
+        return self::hydrateFromMap(new self, [
+            'amount' => 'setAmount',
+            'currency' => 'setCurrency',
+        ], $data);
     }
 }
